@@ -1,3 +1,5 @@
-/venv_windows/
-/venv_manjaro/
+/venv_*/
+/venv-*/
 /venv/
+__pycache__
+*.old

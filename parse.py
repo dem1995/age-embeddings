@@ -1,6 +1,7 @@
 import pandas as pd
 import string
 import pickle
+import glob
 from collections import defaultdict
 
 test = False
@@ -11,8 +12,13 @@ def parse_blogtext():
 	Stores the results to text files and to a pickle file for future use.
 	"""
 
-	df = pd.read_csv('csv/blogtext.csv')
+	extension = 'csv'
+	all_filenames = [i for i in glob.glob('csv/*.{}'.format(extension))]
+	[print(fn) for fn in all_filenames]
 
+	#combine the same-headered blog csv files
+	df = pd.concat([pd.read_csv(f) for f in all_filenames], ignore_index=True)
+	
 	age_buckets = defaultdict(list)
 
 	for index, row in df.iterrows():
