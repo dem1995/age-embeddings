@@ -7,10 +7,10 @@ from itertools import combinations
 
 use_sg=1
 
-should_parse_blogtext = False
-should_form_embeddings = False
-should_align_embeddings = False
-should_find_top_cosine_differences = False
+should_parse_blogtext = True
+should_form_embeddings = True
+should_align_embeddings = True
+should_find_top_cosine_differences = True
 should_find_differences_for_word = True
 
 first_age_partition = 0

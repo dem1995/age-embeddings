@@ -40,7 +40,7 @@ def parse_blogtext():
 		pickle.dump(age_buckets, out)
 	for bucketnum in range(len(age_buckets)):
 		print("storing age bucket ", bucketnum, "to text file")
-		with open(f"csvs-parsed/bucket{bucketnum}.txt", 'w') as bucketfile:
+		with open(f"csvs-parsed/bucket{bucketnum}.txt", 'w', encoding='utf-8') as bucketfile:
 			for row in age_buckets[bucketnum]:
 				bucketfile.write(row.text.strip() + "\n")
 	
