@@ -14,21 +14,26 @@ should_find_top_cosine_differences = True
 should_find_differences_for_word = True
 
 first_age_partition = 0
-second_age_partition = 3
+second_age_partition = 2
 
 if should_parse_blogtext:
+    print("Parsing blog text")
     parse_blogtext()
 
 if should_form_embeddings:
+    print("Forming embeddings")
     form_embeddings(use_sg=use_sg)
 
 if should_align_embeddings:
-    for firstindex, secondindex in combinations(range(4), 2):
+    print("Aligning embeddings")
+    for firstindex, secondindex in combinations(range(3), 2):
         align_embeddings(firstindex, secondindex, use_sg=use_sg)
 
 if should_find_top_cosine_differences:
+    print("Getting top differences")
     get_top_differences(first_age_partition, second_age_partition, use_sg)
 
 if should_find_differences_for_word:
+    print("Finding differences for a given word:")
     word = input("What word would you like to find differences for?")
     get_differences_for_word(first_age_partition, second_age_partition, use_sg=use_sg, word_to_find=word)

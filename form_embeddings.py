@@ -9,7 +9,7 @@ from gensim.test.utils import datapath
 from gensim import utils
 
 def form_embeddings(use_sg=1):
-    for bucketnum in range(4):
+    for bucketnum in range(3):
         class MyCorpus(object):
             """An interator that yields sentences (lists of str)."""
 
